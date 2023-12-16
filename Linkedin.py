@@ -297,24 +297,6 @@ print(report)
 #Use the model to make predictions. For instance, what is the probability that a high income (e.g. income=8), with a high level of education (e.g. 7), non-parent who is married female and 42 years old uses LinkedIn? How does the probability change if another person is 82 years old, but otherwise the same?
 import numpy as np
 
-# Define the feature values for both individuals
-features_42yr = np.array([[8, 7, 0, 1, 1, 42]])  # High income, high education, non-parent, married, female, 42 years old
-features_82yr = np.array([[8, 7, 0, 1, 1, 82]])  # High income, high education, non-parent, married, female, 82 years old
-features_42yr_imputed = imputer.transform(features_42yr)
-features_82yr_imputed = imputer.transform(features_82yr)
-
-# Use the model to predict probabilities
-probability_42yr = logreg.predict_proba(features_42yr_imputed)[0][1]  # Probability of being a LinkedIn user
-probability_82yr = logreg.predict_proba(features_82yr_imputed)[0][1]  # Probability of being a LinkedIn user
-
-print(f"Probability of a 42-year-old using LinkedIn: {probability_42yr:.2f}")
-print(f"Probability of an 82-year-old using LinkedIn: {probability_82yr:.2f}")
-
-
-
-
-# In[ ]:
-
 
 
 
